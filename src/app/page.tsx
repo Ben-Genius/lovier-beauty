@@ -1,9 +1,17 @@
-const Home = () => {
+import CTASection  from "@/components/CTASection";
+import HeroSection from "@/components/Hero/HeroSection";
+import ServicesPreview from "@/components/ServicesPreview";
+import StatsSection from "@/components/Stats/StatSection";
+import TestimonialSection  from "@/components/Testimonial/TestimonialSection";
+
+export default function Home() {
   return (
-    <div className="bg-yellow-600 h-4/12 text-6xl text-green-600">
-      Enter
-    </div>
+    <>
+      <HeroSection />
+      <ServicesPreview />
+      <StatsSection />
+      <TestimonialSection />
+      <CTASection />
+    </>
   );
 }
-
-export default Home;
