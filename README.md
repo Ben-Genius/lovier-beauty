@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lovier Beauty
 
-## Getting Started
+A modern, elegant beauty salon website built with Next.js 15, featuring a sophisticated booking system and stunning visual design.
 
-First, run the development server:
+## 🚀 Live Demo
 
+**Production URL**: [https://lovier-beauty-gdnr7m8o5-azay-genius-projects.vercel.app](https://lovier-beauty-gdnr7m8o5-azay-genius-projects.vercel.app)
+
+## ✨ Features
+
+- **Modern Design**: Sleek, Apple-inspired UI with smooth animations
+- **Booking System**: Complete appointment booking with service selection, date/time picker, and customer details
+- **Service Gallery**: Interactive gallery showcasing beauty services
+- **Responsive**: Fully responsive design for all devices
+- **Performance Optimized**: Static generation with Next.js 15
+- **TypeScript**: Full type safety throughout the application
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **State Management**: Zustand
+- **Deployment**: Vercel
+
+## 🏃‍♂️ Getting Started
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd lovier-beauty
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Run development server**
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Open your browser**
+Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## 📦 Build & Deploy
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Build for production
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Deploy to Vercel
+vercel --prod
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/                 # Next.js App Router pages
+├── components/          # Reusable UI components
+├── hooks/              # Custom React hooks
+├── store/              # Zustand state management
+└── lib/                # Utility functions
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Key Components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Booking Flow**: Multi-step booking process with service selection, scheduling, and customer details
+- **Interactive Gallery**: Dynamic image gallery with lightbox functionality
+- **Service Cards**: Animated service showcase with detailed information
+- **Contact Forms**: Integrated contact and booking forms
+
+---
+
+Built with ❤️ using Next.js and deployed on Vercel.

@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ["framer-motion", "@heroicons/react"],
-    optimizeCss: true
-  }
+  },
+  outputFileTracingRoot: __dirname
 };
 
 export default nextConfig;

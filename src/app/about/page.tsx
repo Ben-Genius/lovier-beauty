@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import {  useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   Heart,
@@ -9,8 +9,8 @@ import {
   Sparkles,
   CheckCircle,
   ArrowRight,
-  Quote,
 } from "lucide-react";
+import Image from "next/image";
 
 const values = [
   {
@@ -190,10 +190,11 @@ export default function AppleAboutPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="relative h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-lg">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1560869713-bf165a6275b3?w=800&q=90"
                   alt="Lovier Beauty Hub Studio"
                   className="w-full h-full object-cover"
+                  fill={true}
                 />
                 <div className="absolute inset-0 bg-black/5" />
               </div>
@@ -359,7 +360,7 @@ export default function AppleAboutPage() {
                         SPECIALTIES
                       </h4>
                       <div className="flex flex-wrap gap-2">
-                        {member.specialties.map((specialty, idx) => (
+                        {member.specialties.map((specialty) => (
                           <span
                             key={specialty}
                             className="px-3 py-1.5 bg-black/5 text-black/70 text-xs rounded-full font-medium"

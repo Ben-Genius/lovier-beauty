@@ -62,7 +62,7 @@ export function DateTimeSelection({ onNext }: DateTimeSelectionProps) {
       const isPast = date < today;
       const isToday = date.getTime() === today.getTime();
       const isSelected =
-        selectedDate && date.getTime() === selectedDate.getTime();
+        selectedDate ? date.getTime() === selectedDate.getTime() : false;
       const isSunday = date.getDay() === 0; // Closed on Sundays
 
       const weekdayShort = date.toLocaleDateString("en-US", {

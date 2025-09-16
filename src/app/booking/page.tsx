@@ -7,16 +7,12 @@ import ServiceSelection from "./ServiceSelection";
 import { DateTimeSelection } from "./DateTimeSelection";
 import { CustomerDetails } from "./CustomerDetail";
 import { BookingConfirmation } from "./bookingConfirmation";
+import { BookingData } from "@/store/bookingStore";
 
 // Mock booking store (simplified for demo)
 const useBookingStore = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [bookingData, setBookingData] = useState({
-    service: null,
-    date: null,
-    time: null,
-    customerInfo: null,
-  });
+  const [bookingData, setBookingData] = useState<BookingData>({});
 
   return {
     currentStep,
@@ -25,12 +21,7 @@ const useBookingStore = () => {
     setBookingData,
     resetBooking: () => {
       setCurrentStep(1);
-      setBookingData({
-        service: null,
-        date: null,
-        time: null,
-        customerInfo: null,
-      });
+      setBookingData({});
     },
   };
 };

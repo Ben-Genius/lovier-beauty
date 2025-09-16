@@ -1,7 +1,7 @@
 import heroLashes from "../../../public/images/img-5.png";
 import heroNails from "../../../public/images/hero.jpg";
 import heroBraids from "../../../public/images/enhanced_image.png";
-import h1 from "../../../public/images/h1.jpeg"
+import h1 from "../../../public/images/h1.jpeg";
 import hh2 from "../../../public/images/h2.jpeg";
 import hh3 from "../../../public/images/h3.jpeg";
 import hh4 from "../../../public/images/h4.jpeg";
@@ -20,12 +20,10 @@ import nn4 from "../../../public/images/n4.jpeg";
 import nn5 from "../../../public/images/n5.jpeg";
 import nn6 from "../../../public/images/n6.jpeg";
 import nn7 from "../../../public/images/n7.jpeg";
-import nn8 from "../../../public/images/n8.jpeg";
 import pp1 from "../../../public/images/p1.jpg";
 import pp2 from "../../../public/images/p2.jpeg";
 import pp3 from "../../../public/images/p3.jpeg";
 import pp4 from "../../../public/images/p4.jpeg";
-import pp5 from "../../../public/images/p5.jpeg";
 
 const filter = ["All", "Lashes", "Nails", "Braids", "Pedicures", "Piercings"];
 

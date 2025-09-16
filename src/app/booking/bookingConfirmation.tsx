@@ -102,7 +102,7 @@ export function BookingConfirmation({ onReset }: BookingConfirmationProps) {
           animate={{ opacity: 1, y: 0 }}
           className="text-sm text-black/60 mb-6"
         >
-          We've sent a confirmation to your email. See the details below or book
+          We&apos;ve sent a confirmation to your email. See the details below or book
           another appointment.
         </motion.p>
 

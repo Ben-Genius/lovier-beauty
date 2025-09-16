@@ -3,9 +3,23 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { Calendar, Clock, Star, ArrowRight } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-export default function AppleServiceCard({ service, index, isVisible }) {
+export default function AppleServiceCard({ service, index, isVisible }: {
+  service: { 
+    id: string; 
+    title: string; 
+    description: string; 
+    price: string; 
+    duration: string; 
+    image: StaticImageData; 
+    category: string; 
+    rating: number; 
+    featured: boolean; 
+  };
+  index: number;
+  isVisible: boolean;
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

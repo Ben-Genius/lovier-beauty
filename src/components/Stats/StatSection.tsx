@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 type Stat = {
   id: number;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ className?: string }>;
   number: number;
   suffix?: string;
   label: string;

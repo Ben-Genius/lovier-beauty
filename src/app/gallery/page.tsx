@@ -11,8 +11,23 @@ import {
   Sparkles,
   Star,
 } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Boxes } from "@/components/ui/background-boxes";
+
+interface GalleryImage {
+  id: number;
+  src: string | StaticImageData;
+  alt?: string;
+  title: string;
+  description: string;
+  category: string;
+  featured?: boolean;
+  additionalImages?: string[];
+  details?: {
+    duration: string;
+    priceRange: string;
+  };
+}
 import { cn } from "@/lib/utils";
 import { galleryImages } from "../lib/dummyData";
 
@@ -25,7 +40,12 @@ const categories = [
   "Piercings",
 ];
 
-function CreativeGalleryCard({ image, index, onClick, isVisible }) {
+function CreativeGalleryCard({ image, index, onClick, isVisible }: {
+  image: GalleryImage;
+  index: number;
+  onClick: (image: GalleryImage) => void;
+  isVisible: boolean;
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   const isFeatured = image.featured;
@@ -96,7 +116,7 @@ function CreativeGalleryCard({ image, index, onClick, isVisible }) {
         >
           <Image
             src={image.src}
-            alt={image.title}
+            alt={image.alt || image.title}
             className="w-full h-full object-cover"
             fill={true}
           />
@@ -179,7 +199,7 @@ function CreativeGalleryCard({ image, index, onClick, isVisible }) {
 
 export default function AppleGallery() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -190,17 +210,17 @@ export default function AppleGallery() {
       : galleryImages.filter((img) => img.category === selectedCategory);
 
   const handlePrevImage = () => {
-    if (selectedImage) {
+    if (selectedImage && selectedImage.additionalImages) {
       setCurrentImageIndex((prev) =>
-        prev === 0 ? selectedImage.additionalImages.length : prev - 1
+        prev === 0 ? selectedImage.additionalImages!.length : prev - 1
       );
     }
   };
 
   const handleNextImage = () => {
-    if (selectedImage) {
+    if (selectedImage && selectedImage.additionalImages) {
       setCurrentImageIndex((prev) =>
-        prev === selectedImage.additionalImages.length ? 0 : prev + 1
+        prev === selectedImage.additionalImages!.length ? 0 : prev + 1
       );
     }
   };
@@ -209,7 +229,7 @@ export default function AppleGallery() {
     if (!selectedImage) return "";
     return currentImageIndex === 0
       ? selectedImage.src
-      : selectedImage.additionalImages[currentImageIndex - 1];
+      : selectedImage.additionalImages?.[currentImageIndex - 1] || selectedImage.src;
   };
 
   return (
@@ -430,7 +450,7 @@ export default function AppleGallery() {
 
                   {/* Thumbnail Previews */}
                   <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-                    {[selectedImage.src, ...selectedImage.additionalImages].map(
+                    {[selectedImage.src, ...(selectedImage.additionalImages || [])].map(
                       (img, index) => (
                         <motion.button
                           key={index}
@@ -470,11 +490,11 @@ export default function AppleGallery() {
                     <div className="space-y-2 text-gray-600">
                       <p>
                         <strong>Duration:</strong>{" "}
-                        {selectedImage.details.duration}
+                        {selectedImage.details?.duration || "N/A"}
                       </p>
                       <p>
                         <strong>Price Range:</strong>{" "}
-                        {selectedImage.details.priceRange}
+                        {selectedImage.details?.priceRange || "N/A"}
                       </p>
                     </div>
                   </div>

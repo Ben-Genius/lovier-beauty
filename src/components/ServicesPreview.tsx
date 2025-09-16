@@ -100,7 +100,18 @@ const services = [
 ];
 
 // Custom content component for each service card
-const ServiceContent = ({ service }) => {
+const ServiceContent = ({ service }: { 
+  service: { 
+    title: string; 
+    description: string; 
+    price: string; 
+    duration: string; 
+    category?: string;
+    features: string[];
+    rating: number;
+    href: string;
+  } 
+}) => {
   return (
     <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
       {/* Description */}
