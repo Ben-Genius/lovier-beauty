@@ -4,7 +4,7 @@ A modern, elegant beauty salon website built with Next.js 15, featuring a sophis
 
 ## 🚀 Live Demo
 
-**Production URL**: [https://lovier-beauty-gdnr7m8o5-azay-genius-projects.vercel.app](https://lovier-beauty-gdnr7m8o5-azay-genius-projects.vercel.app)
+**Production URL**: [https://lovier-beauty.vercel.app](https://lovier-beauty.vercel.app)
 
 ## ✨ Features
 
